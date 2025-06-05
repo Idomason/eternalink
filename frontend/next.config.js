@@ -8,6 +8,9 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  experimental: {
+    optimizeCss: false,
+  },
 };
 
 module.exports = nextConfig;
