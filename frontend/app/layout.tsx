@@ -6,8 +6,9 @@ import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   weight: ["400", "600", "700", "800"],
-  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} antialiased min-h-screen flex flex-col w-full`}
+        className={`${inter.variable} ${inter.className} antialiased min-h-screen flex flex-col w-full`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>
