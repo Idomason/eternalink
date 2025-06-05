@@ -4,17 +4,74 @@ import { Event } from "../models/event.model";
 import { auth } from "../middleware/auth.middleware";
 import { IUser } from "../models/user.model";
 
+// Define an interface for request with user
+interface RequestWithUser extends Request {
+  user?: IUser;
+}
+
 const router = express.Router();
 
 // Get user profile
 router.get("/profile", auth, async (req: Request, res: Response) => {
   try {
-    const user = await User.findById(req.user?._id).select("-password");
+    const user = await User.findById((req as RequestWithUser).user?._id).select(
+      "-password"
+    );
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
     res.status(200).json(user);
   } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// Get dashboard data
+router.get("/dashboard", auth, async (req: Request, res: Response) => {
+  try {
+    const authReq = req as RequestWithUser;
+    if (!authReq.user) {
+      return res.status(401).json({ error: "Not authenticated" });
+    }
+
+    // Get upcoming events count
+    const upcomingEvents = await Event.countDocuments({
+      participants: authReq.user._id,
+      status: "upcoming",
+    });
+
+    // Get connections count based on user role
+    let connections = 0;
+    if (authReq.user.role === "caregiver") {
+      // For caregivers, count associated elders
+      connections = await User.countDocuments({
+        role: "elder",
+        // In a real app, you would have a connection model or field to track this
+      });
+    } else if (authReq.user.role === "elder") {
+      // For elders, count associated caregivers and volunteers
+      connections = await User.countDocuments({
+        role: { $in: ["caregiver", "volunteer"] },
+        // In a real app, you would have a connection model or field to track this
+      });
+    } else if (authReq.user.role === "volunteer") {
+      // For volunteers, count associated elders
+      connections = await User.countDocuments({
+        role: "elder",
+        // In a real app, you would have a connection model or field to track this
+      });
+    }
+
+    // In a real app, you would have a messages model to track unread messages
+    const unreadMessages = 3; // Placeholder value
+
+    res.status(200).json({
+      upcomingEvents,
+      connections,
+      unreadMessages,
+    });
+  } catch (error) {
+    console.error("Dashboard error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -32,13 +89,21 @@ router.patch("/profile", auth, async (req: Request, res: Response) => {
   }
 
   try {
-    if (!req.user) {
+    const authReq = req as RequestWithUser;
+    if (!authReq.user) {
       return res.status(401).json({ error: "Not authenticated" });
     }
 
-    updates.forEach((update) => (req.user[update] = req.body[update]));
-    await req.user.save();
-    res.status(200).json(req.user);
+    const user = authReq.user;
+
+    updates.forEach((update) => {
+      if (update in user) {
+        (user as any)[update] = req.body[update];
+      }
+    });
+
+    await user.save();
+    res.status(200).json(user);
   } catch (error) {
     res.status(400).json({ error: "Error updating profile" });
   }
@@ -47,7 +112,8 @@ router.patch("/profile", auth, async (req: Request, res: Response) => {
 // Get user events
 router.get("/events", auth, async (req: Request, res: Response) => {
   try {
-    if (!req.user) {
+    const authReq = req as RequestWithUser;
+    if (!authReq.user) {
       return res.status(401).json({ error: "Not authenticated" });
     }
 
@@ -56,7 +122,10 @@ router.get("/events", auth, async (req: Request, res: Response) => {
     const skip = (page - 1) * limit;
 
     const events = await Event.find({
-      $or: [{ organizer: req.user._id }, { participants: req.user._id }],
+      $or: [
+        { organizer: authReq.user._id },
+        { participants: authReq.user._id },
+      ],
     })
       .sort({ startDate: -1 })
       .skip(skip)
@@ -65,7 +134,10 @@ router.get("/events", auth, async (req: Request, res: Response) => {
       .populate("participants", "firstName lastName email");
 
     const total = await Event.countDocuments({
-      $or: [{ organizer: req.user._id }, { participants: req.user._id }],
+      $or: [
+        { organizer: authReq.user._id },
+        { participants: authReq.user._id },
+      ],
     });
 
     res.status(200).json({
@@ -87,7 +159,8 @@ router.post(
   auth,
   async (req: Request, res: Response) => {
     try {
-      if (!req.user) {
+      const authReq = req as RequestWithUser;
+      if (!authReq.user) {
         return res.status(401).json({ error: "Not authenticated" });
       }
 
@@ -96,7 +169,7 @@ router.post(
         return res.status(404).json({ error: "Event not found" });
       }
 
-      if (event.status !== "active") {
+      if (event.status !== "upcoming") {
         return res.status(400).json({ error: "Event is not active" });
       }
 
@@ -104,11 +177,11 @@ router.post(
         return res.status(400).json({ error: "Event is full" });
       }
 
-      if (event.participants.includes(req.user._id)) {
+      if (event.participants.includes(authReq.user._id)) {
         return res.status(400).json({ error: "Already joined this event" });
       }
 
-      event.participants.push(req.user._id);
+      event.participants.push(authReq.user._id);
       await event.save();
 
       res.status(200).json(event);
@@ -124,7 +197,8 @@ router.post(
   auth,
   async (req: Request, res: Response) => {
     try {
-      if (!req.user) {
+      const authReq = req as RequestWithUser;
+      if (!authReq.user) {
         return res.status(401).json({ error: "Not authenticated" });
       }
 
@@ -133,16 +207,18 @@ router.post(
         return res.status(404).json({ error: "Event not found" });
       }
 
-      if (event.status !== "active") {
+      if (event.status !== "upcoming") {
         return res.status(400).json({ error: "Event is not active" });
       }
 
-      if (!event.participants.includes(req.user._id)) {
+      if (!event.participants.includes(authReq.user._id)) {
         return res.status(400).json({ error: "Not joined this event" });
       }
 
+      const userId = authReq.user._id.toString();
+
       event.participants = event.participants.filter(
-        (participantId) => participantId.toString() !== req.user._id.toString()
+        (participantId) => participantId.toString() !== userId
       );
       await event.save();
 

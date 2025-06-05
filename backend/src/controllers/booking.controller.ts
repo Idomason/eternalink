@@ -1,11 +1,17 @@
 import { Request, Response } from "express";
 import { Booking } from "../models/booking.model";
 import { Event } from "../models/event.model";
+import { IUser } from "../models/user.model";
+
+// Define RequestWithUser interface
+interface RequestWithUser extends Request {
+  user?: IUser;
+}
 
 export const createBooking = async (req: Request, res: Response) => {
   try {
     const { eventId, paymentMethod, momoNumber } = req.body;
-    const userId = req.user._id;
+    const userId = (req as RequestWithUser).user?._id;
 
     // Check if event exists and has capacity
     const event = await Event.findById(eventId);
@@ -42,7 +48,7 @@ export const createBooking = async (req: Request, res: Response) => {
 
 export const getUserBookings = async (req: Request, res: Response) => {
   try {
-    const userId = req.user._id;
+    const userId = (req as RequestWithUser).user?._id;
     const bookings = await Booking.find({ user: userId })
       .populate("event")
       .sort({ createdAt: -1 });

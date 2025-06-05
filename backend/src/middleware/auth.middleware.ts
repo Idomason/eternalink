@@ -2,8 +2,16 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { User, IUser } from "../models/user.model";
 
+// No need to import types file explicitly
+// The declaration in express.d.ts is global
+
 interface JwtPayload {
   _id: string;
+}
+
+// Define an interface for request with user
+interface RequestWithUser extends Request {
+  user?: IUser;
 }
 
 export const auth = async (req: Request, res: Response, next: NextFunction) => {
@@ -25,8 +33,9 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
       throw new Error();
     }
 
-    // Type assertion to ensure TypeScript knows user is IUser
-    (req as Request & { user: IUser }).user = user;
+    // Use type assertion as a workaround
+    (req as RequestWithUser).user = user;
+
     next();
   } catch (error) {
     res.status(401).json({ error: "Please authenticate." });

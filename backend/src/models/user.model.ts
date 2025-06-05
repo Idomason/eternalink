@@ -18,6 +18,8 @@ export interface IUser extends Document {
     phoneNumber: string;
     relationship: string;
   };
+  connections: mongoose.Types.ObjectId[];
+  connectionRequests: mongoose.Types.ObjectId[];
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -77,6 +79,20 @@ const userSchema = new Schema<IUser>(
       phoneNumber: String,
       relationship: String,
     },
+    connections: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        default: [],
+      },
+    ],
+    connectionRequests: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        default: [],
+      },
+    ],
   },
   {
     timestamps: true,
@@ -100,6 +116,7 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.comparePassword = async function (
   candidatePassword: string
 ): Promise<boolean> {
+  console.log(candidatePassword, this.password);
   return bcrypt.compare(candidatePassword, this.password);
 };
 
