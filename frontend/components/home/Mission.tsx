@@ -27,7 +27,10 @@ const Mission = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section bg-white dark:bg-accent-1">
+    <section
+      ref={sectionRef}
+      className="section bg-white dark:bg-accent-1 font-sans"
+    >
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Mission Statement */}

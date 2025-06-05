@@ -27,7 +27,7 @@ const CallToAction = () => {
   }, []);
 
   return (
-    <section className="section bg-gradient-to-r from-accent-2 to-primary dark:from-accent-1 dark:to-primary text-white overflow-hidden">
+    <section className="section bg-gradient-to-r from-accent-2 to-primary dark:from-accent-1 dark:to-primary text-white overflow-hidden font-sans">
       <div
         ref={containerRef}
         className="container-custom relative opacity-0 transform translate-y-10 transition-all duration-1000"

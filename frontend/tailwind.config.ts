@@ -18,8 +18,8 @@ const config: Config = {
         "accent-2": "var(--accent-2)",
       },
       fontFamily: {
-        sans: ["var(--font-lato)"],
-        serif: ["var(--font-lato)"],
+        sans: ["var(--font-inter)"],
+        mono: ["var(--font-inter)"],
       },
     },
   },

@@ -1,3 +1,9 @@
 module.exports = {
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {
+      // Disable browserslist query
+      overrideBrowserslist: ["defaults", "not IE 11"],
+    },
+  },
 };

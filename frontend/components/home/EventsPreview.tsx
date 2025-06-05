@@ -58,7 +58,7 @@ const EventsPreview = () => {
   const activeEvent = events[activeIndex];
 
   return (
-    <section className="section bg-accent-1/30 dark:bg-accent-2/10 relative overflow-hidden">
+    <section className="section bg-accent-1/30 dark:bg-accent-2/10 relative overflow-hidden font-sans">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>

@@ -10,7 +10,8 @@ const testimonials = [
       "EternaLink has brought so much joy back into my life. I've made new friends and get to share my cooking skills with the younger generation. The events are always well organized and I look forward to them every week.",
     name: "Abena Mensah",
     role: "Elder, 78",
-    avatar: "/testimonials/elder-woman.jpg",
+    avatar:
+      "https://images.unsplash.com/photo-1583994569449-34f2408f9f96?q=80&w=300&h=300&auto=format&fit=crop",
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const testimonials = [
       "As a caregiver to my father, I was struggling to provide him with meaningful social interactions. EternaLink has been a blessing - he's happier, more engaged, and loves teaching the youth about traditional herbal remedies.",
     name: "Kwame Osei",
     role: "Caregiver",
-    avatar: "/testimonials/caregiver-man.jpg",
+    avatar:
+      "https://images.unsplash.com/photo-1529111290557-82f6d5c6cf85?q=80&w=300&h=300&auto=format&fit=crop",
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ const testimonials = [
       "Volunteering with EternaLink has been one of the most rewarding experiences of my life. The wisdom I've gained from the elders is invaluable, and I've learned so much about our cultural heritage.",
     name: "Akosua Boateng",
     role: "Youth Volunteer, 22",
-    avatar: "/testimonials/youth-woman.jpg",
+    avatar:
+      "https://images.unsplash.com/photo-1543269664-56d93c1b41a6?q=80&w=300&h=300&auto=format&fit=crop",
   },
   {
     id: 4,
@@ -34,7 +37,8 @@ const testimonials = [
       "I never thought I'd be teaching young people how to use smartphones at my age! The skill-sharing aspect of EternaLink works both ways - I share my traditional knowledge, and they help me navigate technology.",
     name: "Joseph Addo",
     role: "Elder, 82",
-    avatar: "/testimonials/elder-man.jpg",
+    avatar:
+      "https://images.unsplash.com/photo-1504114759110-959daf889fc3?q=80&w=300&h=300&auto=format&fit=crop",
   },
 ];
 
@@ -54,7 +58,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="section bg-gradient-to-br from-primary/5 to-secondary/10 dark:from-accent-2/20 dark:to-primary/20">
+    <section className="section bg-gradient-to-br from-primary/5 to-secondary/10 dark:from-accent-2/20 dark:to-primary/20 font-sans">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
