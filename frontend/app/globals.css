@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #d4af37;
+  --primary-dark: #b8860b;
+  --secondary: #fbcfe8;
+  --secondary-dark: #f9a8d4;
+  --background: #ffffff;
+  --foreground: #5d4037;
+  --accent-1: #fffdd0;
+  --accent-2: #8b4513;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #5d4037;
+    --foreground: #fffdd0;
+    --accent-1: #8b4513;
+    --accent-2: #d4af37;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-primary-sm {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-1 px-3 text-sm rounded-md transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-white font-medium py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 px-4 rounded-md transition-all duration-300;
+  }
+
+  .btn-outline-sm {
+    @apply border text-sm border-primary text-primary hover:bg-primary hover:text-white font-medium py-1 px-3 rounded-md transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white dark:bg-accent-1 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+
+  .section {
+    @apply py-16 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
