@@ -11,7 +11,8 @@ const events = [
     title: "Echoes & Expressions Day",
     date: "Every Tuesday",
     location: "Accra Cultural Centre",
-    image: "/events/echoes-expressions.jpg",
+    image:
+      "https://images.unsplash.com/photo-1566993629675-97861a455137?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders sip tea, share life stories, act out folktales, and offer meaningful advice in a joyful, expressive gathering.",
     price: "₵25",
@@ -23,7 +24,8 @@ const events = [
     title: "Rhythm & Reminisce Day",
     date: "Every Thursday",
     location: "Community Hall, East Legon",
-    image: "/events/rhythm-reminisce.jpg",
+    image:
+      "https://images.unsplash.com/photo-1617994679330-2883951d0073?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders dance to classic tunes, sing along to old favourites, and enjoy fun music games that spark joyful memories.",
     price: "₵30",
@@ -35,7 +37,8 @@ const events = [
     title: "Spotlight & Stories Day",
     date: "Every Friday",
     location: "Silver Screen Cinema, Osu",
-    image: "/events/spotlight-stories.jpg",
+    image:
+      "https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders showcase their hidden talents and watch meaningful films followed by simple group discussions.",
     price: "₵20",
@@ -47,7 +50,8 @@ const events = [
     title: "Create & Compete Day",
     date: "Every Saturday",
     location: "Arts Centre, Accra",
-    image: "/events/create-compete.jpg",
+    image:
+      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders make beautiful crafts and enjoy fun games that test their memory and creativity.",
     price: "₵25",
@@ -59,7 +63,8 @@ const events = [
     title: "Flavours & Festivals Day",
     date: "Every Sunday",
     location: "Food Court, Accra Mall",
-    image: "/events/flavours-festivals.jpg",
+    image:
+      "https://images.unsplash.com/photo-1499889808931-317a0255c0e9?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders cook traditional meals and share stories about cultural festivals from their communities.",
     price: "₵35",
