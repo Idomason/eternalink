@@ -12,7 +12,7 @@ const events = [
     date: "Every Tuesday",
     location: "Accra Cultural Centre",
     image:
-      "https://images.unsplash.com/photo-1566993629675-97861a455137?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1718010588689-9806ce642d39?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGFwcHklMjBBZnJpY2FuJTIwZWxkZXJzJTIwZXZlbnRzfGVufDB8fDB8fHww?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders sip tea, share life stories, act out folktales, and offer meaningful advice in a joyful, expressive gathering.",
     price: "₵25",
@@ -38,7 +38,7 @@ const events = [
     date: "Every Friday",
     location: "Silver Screen Cinema, Osu",
     image:
-      "https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1580867532901-7e3707f178ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhhcHB5JTIwQWZyaWNhbiUyMGVsZGVycyUyMGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders showcase their hidden talents and watch meaningful films followed by simple group discussions.",
     price: "₵20",
@@ -51,7 +51,7 @@ const events = [
     date: "Every Saturday",
     location: "Arts Centre, Accra",
     image:
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1737649507334-92c9fa4beb7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhhcHB5JTIwQWZyaWNhbiUyMGVsZGVycyUyMGV2ZW50c3xlbnwwfHwwfHx8MA%3D%3D?q=80&w=800&auto=format&fit=crop",
     description:
       "Elders make beautiful crafts and enjoy fun games that test their memory and creativity.",
     price: "₵25",

@@ -5,14 +5,20 @@ const nextConfig = {
       "media.istockphoto.com",
       "plus.unsplash.com",
       "images.unsplash.com",
+      "unsplash.com",
+      "thumbs.dreamstime.com",
     ],
     unoptimized: true,
   },
   experimental: {
     optimizeCss: false,
   },
-  output: "export",
-  distDir: "dist",
 };
+
+// Only enable export mode for production builds
+if (process.env.NODE_ENV === "production") {
+  nextConfig.output = "export";
+  nextConfig.distDir = "dist";
+}
 
 module.exports = nextConfig;

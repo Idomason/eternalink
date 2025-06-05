@@ -173,15 +173,15 @@ export default function AboutPage() {
             <div className="bg-white dark:bg-accent-1 rounded-xl shadow-md overflow-hidden">
               <div className="relative h-80">
                 <Image
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="John Doe - Founder"
+                  src="https://images.unsplash.com/photo-1699726242536-bceab822e024?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
+                  alt="Asheshi Asamoah - Founder"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-1 text-foreground">
-                  John Doe
+                  Asheshi Asamoah
                 </h3>
                 <p className="text-accent-2 dark:text-primary mb-4">
                   Founder & CEO
@@ -198,15 +198,15 @@ export default function AboutPage() {
             <div className="bg-white dark:bg-accent-1 rounded-xl shadow-md overflow-hidden">
               <div className="relative h-80">
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Jane Smith - Programs Director"
+                  src="https://images.unsplash.com/photo-1699724440719-b2db98859f0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D"
+                  alt="Queen Jane Gyan - Programs Director"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-1 text-foreground">
-                  Jane Smith
+                  Queen Jane Gyan II
                 </h3>
                 <p className="text-accent-2 dark:text-primary mb-4">
                   Programs Director

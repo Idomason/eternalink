@@ -84,7 +84,7 @@ const Mission = () => {
           <div className="relative h-[500px] animate-on-scroll opacity-0 transition-all duration-1000 delay-500">
             <div className="absolute top-0 left-0 w-64 h-64 rounded-lg overflow-hidden shadow-lg transform -rotate-3 z-10">
               <Image
-                src="https://images.unsplash.com/photo-1710116309099-dd220edf3f74?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8"
+                src="https://thumbs.dreamstime.com/b/hands-holding-smartphone-happy-senior-african-american-couple-christmas-video-call-screen-hands-holding-smartphone-235077565.jpg?w=576"
                 alt="Elderly person telling stories"
                 fill
                 className="object-cover"
@@ -92,7 +92,7 @@ const Mission = () => {
             </div>
             <div className="absolute top-16 right-0 w-72 h-72 rounded-lg overflow-hidden shadow-lg transform rotate-3 z-20">
               <Image
-                src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://thumbs.dreamstime.com/b/getting-to-grips-modern-technology-affectionate-senior-couple-using-cellphone-sitting-park-267471106.jpg?w=768"
                 alt="Youth and elderly cooking together"
                 fill
                 className="object-cover"
@@ -100,7 +100,7 @@ const Mission = () => {
             </div>
             <div className="absolute bottom-0 left-10 w-80 h-64 rounded-lg overflow-hidden shadow-lg transform rotate-1 z-30">
               <Image
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://thumbs.dreamstime.com/b/cropped-view-senior-african-american-cropped-view-senior-african-american-women-holding-smartphone-near-husband-cups-245653411.jpg?w=768"
                 alt="Intergenerational learning"
                 fill
                 className="object-cover"

@@ -129,7 +129,7 @@ const CallToAction = () => {
             <div className="relative h-[500px] w-full">
               <div className="absolute top-0 right-0 w-64 h-80 rounded-xl overflow-hidden shadow-2xl transform rotate-6 z-10">
                 <Image
-                  src="https://images.unsplash.com/photo-1454418747937-bd95bb945625?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://plus.unsplash.com/premium_photo-1661666516432-291ce895e243?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8"
                   alt="Elder teaching youth"
                   fill
                   className="object-cover"
@@ -137,7 +137,7 @@ const CallToAction = () => {
               </div>
               <div className="absolute bottom-0 left-0 w-64 h-80 rounded-xl overflow-hidden shadow-2xl transform -rotate-6 z-20">
                 <Image
-                  src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://images.unsplash.com/photo-1718010588689-9806ce642d39?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Youth helping elder with technology"
                   fill
                   className="object-cover"
